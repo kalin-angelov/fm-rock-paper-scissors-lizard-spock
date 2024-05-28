@@ -1,0 +1,14 @@
+.home-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 31px 31px 51px 31px;
+
+}
+
+@media screen and (min-width: 1024px) {
+    .home-section {
+        margin: 48px 31px 51px 31px;
+    }
+}

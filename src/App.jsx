@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./components/Home/Home";
+import Arena from "./components/Arena/Arena";
+
+import { useSessionStorage } from "./hooks/useSessionStorage";
+import { Context } from "./context/Context";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [score, setScore] = useSessionStorage("userScore", 0);
+  const [userWeapon, setUserWeapon] = useSessionStorage("userSelection", { userSelected: "" });
+  const [houseWeapon, setHouseWeapon] = useSessionStorage("houseSelection", { houseSelected: "" });
+  const [result, setResult] = useSessionStorage("resultOfMach", { result: "" });
+
+  const contextValue = {
+    windowSize,
+    score,
+    setScore,
+    userWeapon,
+    setUserWeapon,
+    houseWeapon,
+    setHouseWeapon,
+    result,
+    setResult
+  };
+
+  useEffect(() => {
+    
+    const windowSizeHandler = () => {
+      setWindowSize(window.innerWidth);
+    };
+    
+    window.addEventListener("resize", windowSizeHandler);
+
+    return(() => {
+      window.removeEventListener("resize", windowSizeHandler);
+    });
+
+  },[]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Context.Provider value={contextValue} >
+      <>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/arena" element={<Arena />} />
+        </Routes>
+      </>
+    </Context.Provider>
+  );
+};
 
-export default App
+export default App;
