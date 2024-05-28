@@ -49,7 +49,7 @@ const Rules = () => {
     <div className="rules-btn-container">
       <button>
         <Link 
-          to="https://fm-rock-paper-scissors-lizard-spock.vercel.app/" 
+          to="https://fm-rock-paper-scissors-five.vercel.app/" 
           target="_blank"
         >
         Lizard Spock

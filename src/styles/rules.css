@@ -65,11 +65,10 @@
         z-index: 1;
 
         .main-container {
-            width: 400px;
-            height: 412px;
+            width: 402px;
+            height: 462px;
             border-radius: 10px;
-    
-            gap: 52px;
+            gap: 20px;
     
             section {
                 display: flex;

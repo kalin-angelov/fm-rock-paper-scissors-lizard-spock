@@ -33,14 +33,15 @@ const Arena = () => {
   } = useContext(Context);
   
   useEffect(() => {
-    if (houseWeapon === "") {
-      setTimeout(() => {
+    
+    setTimeout(() => {
+      if (houseWeapon === "") {
         const result = houseChoice(userWeapon, score);
         setHouseWeapon(result.houseWeapon);
         setResult(result.result);
         setScore(result.score);
-      },"2000");
-    };
+      };
+    },"2000");
   },[]);
   
   const navigateToHome = () => {
@@ -53,7 +54,7 @@ const Arena = () => {
     <div className="arena-section">
       <Score />
 
-      <div className="arena" style={!result ? {marginBottom: 223} : null}>
+      <div className="arena" style={!result ? {marginBottom: 232} : null}>
         <div className={result === "You Won" ? "user-choice winner" : "user-choice"}
           style={result === "You Won" ? {zIndex: 0} : {zIndex: 1}}
         >
@@ -64,7 +65,7 @@ const Arena = () => {
           {userWeapon === "spock" ? windowSize >= 1024 ? <SpockDesktopIcon /> :  <SpockIcon /> : null}
         </div>
         <p className="user-selected">You Picked</p>
-
+  
         <div className={
             result === "" || result === "You Won" || result === "Draw" 
             ? "house-choice" : "house-choice winner"
@@ -78,8 +79,8 @@ const Arena = () => {
               {houseWeapon === "rock" ? windowSize >= 1024 ? <RockDesktopIcon /> :  <RockIcon /> : null}
               {houseWeapon === "paper" ? windowSize >= 1024 ? <PaperDesktopIcon /> :  <PaperIcon /> : null}
               {houseWeapon === "scissors" ? windowSize >= 1024 ? <ScissorsDesktopIcon /> :  <ScissorsIcon /> : null}
-              {userWeapon === "lizard" ? windowSize >= 1024 ? <LizardDesktopIcon /> :  <LizardIcon /> : null}
-              {userWeapon === "spock" ? windowSize >= 1024 ? <SpockDesktopIcon /> :  <SpockIcon /> : null}
+              {houseWeapon === "lizard" ? windowSize >= 1024 ? <LizardDesktopIcon /> :  <LizardIcon /> : null}
+              {houseWeapon === "spock" ? windowSize >= 1024 ? <SpockDesktopIcon /> :  <SpockIcon /> : null}
             </>
           }
         </div>

@@ -6,8 +6,9 @@
     "scissors scissors"
     "spock paper"
     "lizard rock";
-    grid-template-columns: 157px 157px;
+    grid-template-columns: 140px 140px;
     grid-template-rows: 97px 85px 155px;
+    grid-column-gap: 35px;
     margin: 95px 0px;
 
     .pentagon {
@@ -26,12 +27,16 @@
 
 @media screen and (min-width: 1024px) {
     .weapons-container {
-        margin: 72px 0px 0px 0px;
+        align-items: end;
+        grid-template-columns: 219px 219px;
+        grid-template-rows: 148px 129px 188px;
+        grid-column-gap: 35px;
+        margin-top: 46px;
         .pentagon {
-            width: 440px;
-            height: 140px;
+            width: 470px;
+            height: 450px;
             img{
-                height: 230px;
+                height: 300px;
             }
         }
     }

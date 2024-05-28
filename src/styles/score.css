@@ -51,6 +51,11 @@
         height: 150px;
         border-radius: 15px;
 
+        .logo-container {
+            width: 112px;
+            height: 112px;
+        }
+
         .score-container {
             height: 113px;
             width: 150px;

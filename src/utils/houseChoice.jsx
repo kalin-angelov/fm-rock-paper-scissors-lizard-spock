@@ -10,21 +10,21 @@ export  const houseChoice = (selected, points) => {
     const lose = "You Lose";
     const won = "You Won";
     const draw = "Draw";
-    debugger
+ 
     const houseChoice = Math.floor(Math.random() * 5) + 1;
-    console.log(houseChoice);
+  
     if (houseChoice === 1) {
         houseWeapon = "paper";
         switch (selected) {
-          case "paper":
+            case "paper":
             result = draw;
             score = noPoint;
             break;
-          case "rock":
+            case "rock":
             result = lose;
             score = losePoint;
             break;
-          case "scissors":
+            case "scissors":
             result = won;
             score = wonPoint;
             break;
