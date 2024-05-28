@@ -3,13 +3,14 @@
     align-items: center;
     justify-content: center;
     grid-template-areas:
-    "paper scissors"
-    "rock rock";
-    grid-row-gap: 15px;
-    grid-column-gap: 50px;
-    margin: 100px 0px 138px 0px;
+    "scissors scissors"
+    "spock paper"
+    "lizard rock";
+    grid-template-columns: 157px 157px;
+    grid-template-rows: 97px 85px 155px;
+    margin: 95px 0px;
 
-    .triangle {
+    .pentagon {
         z-index: 0;
         position: absolute;
         width: 300px;
@@ -26,7 +27,7 @@
 @media screen and (min-width: 1024px) {
     .weapons-container {
         margin: 72px 0px 0px 0px;
-        .triangle {
+        .pentagon {
             width: 440px;
             height: 140px;
             img{

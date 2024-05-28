@@ -10,9 +10,9 @@ export  const houseChoice = (selected, points) => {
     const lose = "You Lose";
     const won = "You Won";
     const draw = "Draw";
-    
-    const houseChoice = Math.floor(Math.random() * 3) + 1;
-
+    debugger
+    const houseChoice = Math.floor(Math.random() * 5) + 1;
+    console.log(houseChoice);
     if (houseChoice === 1) {
         houseWeapon = "paper";
         switch (selected) {
@@ -27,6 +27,14 @@ export  const houseChoice = (selected, points) => {
           case "scissors":
             result = won;
             score = wonPoint;
+            break;
+            case "lizard":
+            result = won;
+            score = wonPoint;
+            break;
+            case "spock":
+            result = lose;
+            score = losePoint;
             break;
         }
     } else if (houseChoice === 2){
@@ -44,8 +52,16 @@ export  const houseChoice = (selected, points) => {
             result = won;
             score = wonPoint;
             break;
+            case "lizard":
+            result = lose;
+            score = losePoint;
+            break;
+            case "spock":
+            result = won;
+            score = wonPoint;
+            break;
         }
-    } else {
+    } else if (houseChoice === 3) {
         houseWeapon = "rock";
         switch (selected) {
             case "rock":
@@ -57,6 +73,62 @@ export  const houseChoice = (selected, points) => {
             score = losePoint;
             break;
             case "paper":
+            result = won;
+            score = wonPoint;
+            break;
+            case "lizard":
+            result = lose;
+            score = losePoint;
+            break;
+            case "spock":
+            result = won;
+            score = wonPoint;
+            break;
+        }
+    } else if (houseChoice === 4) {
+        houseWeapon = "lizard";
+        switch (selected) {
+            case "lizard":
+            result = draw;
+            score = noPoint;
+            break;
+            case "scissors":
+            result = won;
+            score = wonPoint;
+            break;
+            case "paper":
+            result = lose;
+            score = losePoint;
+            break;
+            case "rock":
+            result = won;
+            score = wonPoint;
+            break;
+            case "spock":
+            result = lose;
+            score = losePoint;
+            break;
+        }
+    } else {
+        houseWeapon = "spock";
+        switch (selected) {
+            case "spock":
+            result = draw;
+            score = noPoint;
+            break;
+            case "scissors":
+            result = lose;
+            score = losePoint;
+            break;
+            case "paper":
+            result = won;
+            score = wonPoint;
+            break;
+            case "rock":
+            result = lose;
+            score = losePoint;
+            break;
+            case "lizard":
             result = won;
             score = wonPoint;
             break;

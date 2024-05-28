@@ -5,6 +5,11 @@ import PaperIcon from "../Icons/PaperIcon";
 import PaperDesktopIcon from "../Icons/PaperDesktopIcon";
 import ScissorsIcon from "../Icons/ScissorsIcon";
 import ScissorsDesktopIcon from "../Icons/ScissorsDesktopIcon";
+import LizardIcon from "../Icons/LizardIcon";
+import LizardDesktopIcon from "../Icons/LizardDesktopIcon";
+import SpockIcon from "../Icons/SpockIcon";
+import SpockDesktopIcon from "../Icons/SpockDesktopIcon";
+
 import Rules from "../Rules/Rules";
 
 import { Context } from "../../context/Context";
@@ -34,7 +39,7 @@ const Arena = () => {
         setHouseWeapon(result.houseWeapon);
         setResult(result.result);
         setScore(result.score);
-      }, "2000");
+      },"2000");
     };
   },[]);
   
@@ -55,6 +60,8 @@ const Arena = () => {
           {userWeapon === "rock" ? windowSize >= 1024 ? <RockDesktopIcon /> :  <RockIcon /> : null}
           {userWeapon === "paper" ? windowSize >= 1024 ? <PaperDesktopIcon /> :  <PaperIcon /> : null}
           {userWeapon === "scissors" ? windowSize >= 1024 ? <ScissorsDesktopIcon /> :  <ScissorsIcon /> : null}
+          {userWeapon === "lizard" ? windowSize >= 1024 ? <LizardDesktopIcon /> :  <LizardIcon /> : null}
+          {userWeapon === "spock" ? windowSize >= 1024 ? <SpockDesktopIcon /> :  <SpockIcon /> : null}
         </div>
         <p className="user-selected">You Picked</p>
 
@@ -71,8 +78,9 @@ const Arena = () => {
               {houseWeapon === "rock" ? windowSize >= 1024 ? <RockDesktopIcon /> :  <RockIcon /> : null}
               {houseWeapon === "paper" ? windowSize >= 1024 ? <PaperDesktopIcon /> :  <PaperIcon /> : null}
               {houseWeapon === "scissors" ? windowSize >= 1024 ? <ScissorsDesktopIcon /> :  <ScissorsIcon /> : null}
+              {userWeapon === "lizard" ? windowSize >= 1024 ? <LizardDesktopIcon /> :  <LizardIcon /> : null}
+              {userWeapon === "spock" ? windowSize >= 1024 ? <SpockDesktopIcon /> :  <SpockIcon /> : null}
             </>
-           
           }
         </div>
         <p className="house-selected">The House Picked</p>

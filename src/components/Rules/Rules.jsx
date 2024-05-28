@@ -40,7 +40,7 @@ const Rules = () => {
           </section>
           
           <figure className="rules-explanation">
-            <img src="/images/image-rules.svg" alt="rules" />
+            <img src="/images/image-rules-bonus.svg" alt="rules" />
           </figure>
         </div>
       </div>
