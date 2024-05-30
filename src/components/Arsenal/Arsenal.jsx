@@ -20,12 +20,12 @@ const Arsenal = () => {
   };
 
   return (
-    <div className="weapons-container">
+    <main className="weapons-container">
       <figure className="pentagon">
         <img src="/images/bg-pentagon.svg" alt="pentagon" />
       </figure>
   
-      <button 
+      <div 
         onClick={ () => onSelect("scissors") } 
         id="weapon-of-war-scissors" 
         className="weapon-btn"
@@ -33,9 +33,9 @@ const Arsenal = () => {
         <figure id="scissors-container" className="weapon-container">
           <img src="/images/icon-scissors.svg" alt="scissors" />
         </figure>
-      </button>
+      </div>
 
-      <button
+      <div
         onClick={ () => onSelect("spock") } 
         id="weapon-of-war-spock" 
         className="weapon-btn"
@@ -43,9 +43,9 @@ const Arsenal = () => {
         <figure id="spock-container" className="weapon-container">
           <img src="/images/icon-spock.svg" alt="spock" />
         </figure>
-      </button>
+      </div>
 
-      <button 
+      <div 
         onClick={ () => onSelect("paper") } 
         id="weapon-of-war-paper" 
         className="weapon-btn"
@@ -53,9 +53,9 @@ const Arsenal = () => {
         <figure id="paper-container" className="weapon-container">
           <img src="/images/icon-paper.svg" alt="paper" />
         </figure>
-      </button>
+      </div>
 
-      <button 
+      <div 
         onClick={ () => onSelect("lizard") } 
         id="weapon-of-war-lizard" 
         className="weapon-btn"
@@ -63,9 +63,9 @@ const Arsenal = () => {
         <figure id="lizard-container" className="weapon-container">
           <img src="/images/icon-lizard.svg" alt="lizard" />
         </figure>
-      </button>
+      </div>
       
-      <button 
+      <div 
         onClick={ () => onSelect("rock") } 
         id="weapon-of-war-rock" 
         className="weapon-btn"
@@ -73,8 +73,8 @@ const Arsenal = () => {
         <figure id="rock-container" className="weapon-container">
           <img src="/images/icon-rock.svg" alt="rock" />
         </figure>
-      </button>
-    </div>
+      </div>
+    </main>
   );
 };
 
